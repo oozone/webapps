@@ -13,7 +13,7 @@
     "postinstall": "ng build"
   },
   "engines": {
-    "node": "~6.11.3",
+    "node": "~8.8.1",
     "npm": "~3.10.10"
   },
   "private": true,
