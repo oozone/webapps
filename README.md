@@ -2,4 +2,4 @@
 
 Matthias Vanooteghem - 3TINC
 Project voor opdracht webapps Derde jaar
-URL: https://mvootegh-webapps-app.herokuapp.com/
+URL: https://webapps-app.herokuapp.com/
