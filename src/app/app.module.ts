@@ -1,17 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { RouterModule, Routes } from '@angular/router';
 
-import { RaterComponent } from './rater/rater.component';
-import { RatingsListComponent } from './ratings-list/ratings-list.component';
+import { RaterComponent } from './rating/rater/rater.component';
+import { RatingsListComponent } from './rating/ratings-list/ratings-list.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 
 const appRoutes: Routes = [
-  { path: 'rater', component: RaterComponent },
-  { path: 'ratingslist', component: RatingsListComponent }
+  //{ path: 'rater', component: RaterComponent },
+  //{ path: 'ratingslist', component: RatingsListComponent }
   // { path: 'hero/:id',      component: RaterComponent },
   // {
   //   path: 'heroes',
@@ -29,15 +31,16 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    RaterComponent,
-    RatingsListComponent
+    PageNotFoundComponent
   ],
   imports: [
-    RouterModule.forRoot(
+    /*RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }
-    ),
-    BrowserModule
+    ),*/
+    BrowserModule,
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
