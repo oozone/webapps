@@ -24,7 +24,12 @@ const appRoutes: Routes = [
     // data: { preload: true },
     loadChildren: '../rating/rating.module#RatingModule'
   },
-  
+  {
+    path: 'contact',
+    //canActivate: [ AuthGuardService ],
+    // data: { preload: true },
+    loadChildren: '../contact/contact.module#ContactModule'
+  },
   //{ path: '', redirectTo: 'rating/list', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent}
 ];
