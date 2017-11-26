@@ -8,15 +8,29 @@ body {
     margin-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+.top-buffer { margin-top:20px; }
+
 .header-image {
     display: block;
     width: 100%;
     text-align: center;
-    background: url('https://images.unsplash.com/photo-1456313662881-afa112263c32?auto=format&fit=crop&w=600&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D') no-repeat center center scroll;
+    background: url('/assets/images/mood_back.jpg') no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+.navbar-inverse {
+    background-color: #357bdc !important;
+}
+
+.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-brand:hover {
+    color: silver;
 }
 
 .headline {
@@ -25,14 +39,17 @@ body {
 
 .headline h1 {
     font-size: 130px;
-    background: #fff;
-    background: rgba(255,255,255,0.9);
+    /* background: #fff; */
+    /* background: rgba(255,255,255,0.9); */
+    font-family: 'Indie Flower', cursive;
+    color: #357bdc;
 }
 
 .headline h2 {
-    font-size: 77px;
-    background: #fff;
-    background: rgba(255,255,255,0.9);
+    margin-top: -35px;
+    font-size: 38px;
+    font-family: 'Muli', sans-serif;
+    color: grey;
 }
 
 .featurette-divider {

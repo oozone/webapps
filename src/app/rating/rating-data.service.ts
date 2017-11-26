@@ -28,4 +28,11 @@ export class RatingDataService {
       .map(response => response.json()).map(item => Rating.fromJSON(item));
   }
 
+  addNewRating(rec): Observable<Rating> {
+    return this.http.post(`${this._appUrl}/ratings`, rec, 
+      //{ headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) }
+    )
+      .map(res => res.json()).map(item => Rating.fromJSON(item));
+  }
+
 }

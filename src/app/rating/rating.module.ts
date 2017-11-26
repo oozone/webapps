@@ -14,6 +14,7 @@ import {RaterComponent} from './rater/rater.component';
 
 const routes = [
   { path: 'list', component: RatingsListComponent },
+  { path: 'rater', component: RaterComponent}
   //{ path: 'add', component: AddRecipeComponent },
   //{ path: ':id', component: RatingDetailComponent,
   //  resolve: { recipe: RatingResolver} }

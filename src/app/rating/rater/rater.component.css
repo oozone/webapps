@@ -1,0 +1,50 @@
+
+     
+    input[type=radio] {
+        background-size: 100px 100px;
+        background-repeat: no-repeat;
+        background-position: left top;
+        border-color: white;
+        border-style: solid;
+
+        display:inline-block;
+        padding: 0 0 0 0px;
+        display:none;
+    }
+
+    input#mood1[type=radio] + label
+    {
+    background-image: url("/assets/images/mood_icons/1.png");
+    background-size: 100px 100px;
+    height: 100px;
+    width: 100px;
+    }
+    input#mood2[type=radio] + label
+    {
+    background-image: url("/assets/images/mood_icons/2.png");
+    background-size: 100px 100px;
+    height: 100px;
+    width: 100px;
+    }
+    input#mood3[type=radio] + label
+    {
+    background-image: url("/assets/images/mood_icons/3.png");
+    background-size: 100px 100px;
+    height: 100px;
+    width: 100px;
+    }
+    input#mood4[type=radio] + label
+    {
+    background-image: url("/assets/images/mood_icons/4.png");
+    background-size: 100px 100px;
+    height: 100px;
+    width: 100px;
+    }
+
+    input#mood5[type=radio] + label
+    {
+    background-image: url("/assets/images/mood_icons/5.png");
+    background-size: 100px 100px;
+    height: 100px;
+    width: 100px;
+    }

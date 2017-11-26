@@ -1,19 +1,37 @@
-
-  <div class="row">
-    
-      <div class="col-sm-12">
-        <form class="form-horizontal" [formGroup]='rating'>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="email">Name</label>
-            <div class="col-sm-10">
-                <input type="email" class="form-control" id="email">
-            </div>
-            
+<div class="panel">
+  <div class="panel-heading">Rate your mood</div>
+  <div class="panel-body">
+      <form [formGroup]='rating' (ngSubmit)='onSubmit()' class="ui large form segment error">
+        <div class="row">
+          <div class="col-sm-2 col-sm-offset-2">
+            <input type="radio" formControlName="ratingNumber" value="1"  id="mood1"/><label for="mood1"></label>
+            <div class="">BAD</div>
           </div>
-      </form>
-      </div>
-    
+          <div class="col-sm-2">
+            <input type="radio" formControlName="ratingNumber" value="2" id="mood2"/><label for="mood2"></label>
+            <div class="">NOT GOOD</div>
+          </div>
+          <div class="col-sm-2">
+            <input type="radio" formControlName="ratingNumber" value="3"  id="mood3"/><label for="mood3"></label>
+            <div class="">OK</div>
+          </div>
+          <div class="col-sm-2">
+            <input type="radio" formControlName="ratingNumber" value="4"  id="mood4"/><label for="mood4"></label>
+            <div class="">GREAT</div>
+          </div>
+          <div class="col-sm-2">
+            <input type="radio" formControlName="ratingNumber" value="5"  id="mood5"/><label id="mood5" for="mood5"></label>
+            <div class="">FANTASTIC</div>
+          </div>
+        </div>
+        <div class="row top-buffer">
+          <div class="col-sm-10 col-sm-offset-2">
+            <label for="comment">Comment:</label>
+            <textarea class="form-control" style="min-width: 100%" cols="3" id="comment" formControlName='comment'></textarea>
+          </div>
+        </div>
+        <button type='submit' class="ui positive right floated button">Save</button>
+    </form>
   </div>
-  <div class="row">
+</div>
 
-  </div>

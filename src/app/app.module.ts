@@ -9,6 +9,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { RaterComponent } from './rating/rater/rater.component';
 import { RatingsListComponent } from './rating/ratings-list/ratings-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -31,7 +33,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     /*RouterModule.forRoot(
@@ -40,7 +42,9 @@ const appRoutes: Routes = [
     ),*/
     BrowserModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

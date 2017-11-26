@@ -1,22 +1,23 @@
 import { Timestamp } from "rxjs/operators/timestamp";
 
 
-export class Rating {
+export class Contact {
     private _id: string;
+    private _name: string;
+    private _email: string;
     private _comment: string;
-    private _ratingNumber: Number;
     private _created_date: Date;
 
-    static fromJSON(json): Rating {
-        const rec = new Rating(json.comment, json.ratingNumber, json.createdDate);
+    static fromJSON(json): Contact {
+        const rec = new Contact(json.name, json.email, json.comment, json.createdDate);
         rec._id = json._id;
         return rec;
     }
 
-    constructor(comment: string, ratingNumber: Number, createdDate: Date) {
+    constructor(name: string, email: string, comment: string, createdDate: Date) {
+        this._name = name;
+        this._email = email;
         this._comment = comment;
-        this._ratingNumber = ratingNumber;
-        //this._created_date = new Date();
         this.createdDate = createdDate;
     }
 
@@ -30,11 +31,20 @@ export class Rating {
         this._comment = comment;
     }
 
-    get ratingNumber(): Number {
-        return this._ratingNumber;
+    get name(): string {
+        return this._name;
     }
-    set ratingNumber(ratingNumber: Number) {
-        this._ratingNumber = ratingNumber;
+
+    set name(name: string){
+        this._name = name;
+    }
+
+    get email(): string {
+        return this._email;
+    }
+
+    set email(email: string){
+        this._email = email;
     }
 
     get createdDate(): Date {
@@ -48,8 +58,9 @@ export class Rating {
     toJSON() {
         return {
             _id: this._id,
+            name: this._name,
+            email: this._email,
             comment: this._comment,
-            ratingNumber: this._ratingNumber,
             created_date: this._created_date,
         };
     }
