@@ -18,7 +18,7 @@ import {ControlMessagesComponent} from '../../control-messages/control-messages.
 export class ContactFormComponent implements OnInit {
 
   @Output() public newContact = new EventEmitter<Contact>();
-  private contact: FormGroup;
+  public contact: FormGroup;
 
   constructor(private fb: FormBuilder, private _contactDataService: ContactDataService, private _router: Router) { }
 

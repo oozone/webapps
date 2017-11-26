@@ -15,7 +15,7 @@ declare var $: any;
 })
 export class RaterComponent implements OnInit {
   @ViewChild('selectElem') el:ElementRef;
-  private rating: FormGroup;
+  public rating: FormGroup;
   constructor(private fb: FormBuilder, private _ratingDataService: RatingDataService, private _router: Router) {
   }
   ngOnInit() {
