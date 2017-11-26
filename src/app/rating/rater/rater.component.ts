@@ -1,10 +1,11 @@
 import { Router } from '@angular/router';
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { RatingDataService } from '../rating-data.service';
 import { Rating } from '../rating.model';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
-
 import { Observable } from 'rxjs/Rx';
+
+declare var $: any;
 
 @Component({
   selector: 'app-rater',
@@ -13,7 +14,7 @@ import { Observable } from 'rxjs/Rx';
   providers: [ RatingDataService ]
 })
 export class RaterComponent implements OnInit {
-
+  @ViewChild('selectElem') el:ElementRef;
   private rating: FormGroup;
   constructor(private fb: FormBuilder, private _ratingDataService: RatingDataService, private _router: Router) {
   }
@@ -24,6 +25,16 @@ export class RaterComponent implements OnInit {
       ratingNumber: ['', [Validators.required]],
     });
 
+  }
+
+  ngAfterViewInit() {
+    $( document ).ready(function() {
+      $("input[type=radio]").change(function(){
+        $("input[type=radio]").next().css("background-color","");
+        $(this).next().css("background-color","#feeaab")
+      })
+      
+    });
   }
 
   onSubmit() {

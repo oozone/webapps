@@ -20,7 +20,7 @@ const appRoutes: Routes = [
   { path: '', redirectTo: 'rating/rater', pathMatch: 'full'},
   {
     path: 'rating',
-    //canActivate: [ AuthGuardService ],
+    canActivate: [ AuthGuardService ],
     // data: { preload: true },
     loadChildren: '../rating/rating.module#RatingModule'
   },

@@ -13,23 +13,23 @@ export class RatingDataService {
   private _ratings;
   
   constructor(private http: Http, 
-    //private auth: AuthenticationService
+    private auth: AuthenticationService
   ) { }
 
   get ratings(): Observable<Rating[]> {
     return this.http.get(`${this._appUrl}ratings`,
-    //{ headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) }
+    { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) }
     )
     .map(response => response.json().map(item => Rating.fromJSON(item)));
   }
 
   getRating(id): Observable<Rating> {
-    return this.http.get(`${this._appUrl}/rating/${id}`)
+    return this.http.get(`${this._appUrl}rating/${id}`)
       .map(response => response.json()).map(item => Rating.fromJSON(item));
   }
 
   addNewRating(rec): Observable<Rating> {
-    return this.http.post(`${this._appUrl}/ratings`, rec, 
+    return this.http.post(`${this._appUrl}ratings`, rec, 
       //{ headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) }
     )
       .map(res => res.json()).map(item => Rating.fromJSON(item));

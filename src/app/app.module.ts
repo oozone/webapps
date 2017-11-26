@@ -12,28 +12,16 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
-
-const appRoutes: Routes = [
-  //{ path: 'rater', component: RaterComponent },
-  //{ path: 'ratingslist', component: RatingsListComponent }
-  // { path: 'hero/:id',      component: RaterComponent },
-  // {
-  //   path: 'heroes',
-  //   component: HeroListComponent,
-  //   data: { title: 'Heroes List' }
-  // },
-  // { path: '',
-  //   redirectTo: '/heroes',
-  //   pathMatch: 'full'
-  // },
-  // { path: '**', component: PageNotFoundComponent }
-];
-
+import { ValidationService } from './validation.service';
+import { AuthenticationService } from './user/authentication.service';
+import { AuthGuardService } from './user/auth-guard.service';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
+
   ],
   imports: [
     /*RouterModule.forRoot(
@@ -42,11 +30,13 @@ const appRoutes: Routes = [
     ),*/
     BrowserModule,
     HttpModule,
+    UserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    
   ],
-  providers: [],
+  providers: [ ValidationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

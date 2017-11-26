@@ -10,15 +10,15 @@ import { Observable } from 'rxjs/Rx';
 export class AppComponent implements OnInit {
 
   constructor(
-    //private auth: AuthenticationService
+    private auth: AuthenticationService
   ) 
     {
   }
 
-  //get currentUser(): Observable<string> {
-    //return this.auth.user$;
+  get currentUser(): Observable<string> {
+    return this.auth.user$;
     
-  //}
+  }
 
   ngOnInit() {
   }

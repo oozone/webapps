@@ -8,6 +8,7 @@ import {ContactDataService} from './contact-data.service';
 import {ContactResolver} from './contact-resolver.service';
 
 import {ContactFormComponent} from './contact-form/contact-form.component';
+import {ControlMessagesComponent} from '../control-messages/control-messages.component'
 
 const routes = [
   { path: '', component: ContactFormComponent },
@@ -26,6 +27,7 @@ const routes = [
   ],
   declarations: [
     ContactFormComponent,
+    ControlMessagesComponent
   ],
   providers: [
     ContactDataService,

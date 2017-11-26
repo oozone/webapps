@@ -16,13 +16,18 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="/rater">Rater</a>
+                    <a href="/">Rater</a>
                 </li>
                 <li>
-                    <a routerLink="/ratingslist">Ratingslist</a>
+                    <a routerLink="/rating/list">Ratingslist</a>
                 </li>
                 <li>
-                    <a href="#contact">Contact</a>
+                    <a href="/contact">Contact</a>
+                </li>
+                <li>
+                        <ng-template #loginlink>
+                                <a class="item" routerLinkActive='active' routerLink="/login">log in</a>
+                              </ng-template>
                 </li>
             </ul>
             
@@ -43,8 +48,8 @@
 </header>
 
 <!-- Page Content -->
-<div class="container">
-  <hr class="featurette-divider">
+<div class="container" style="padding-top: 40px">
+
   <router-outlet></router-outlet>
 
 <hr class="featurette-divider">

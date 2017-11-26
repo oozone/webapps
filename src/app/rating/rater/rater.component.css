@@ -1,16 +1,40 @@
 
+    .pnl-head h3 {
+        font-family: 'Indie Flower', cursive;
+        font-size: 32px;
+    }
      
+    .rater .col-sm-2 {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .rater label {
+        padding: 10px;
+    }
+
+    .rater label:hover {
+        cursor: pointer;
+        background-color: lightblue;
+        
+    }
+
+    input[type=radio]::selection {
+        background-color: lightblue;
+    }
+
     input[type=radio] {
         background-size: 100px 100px;
         background-repeat: no-repeat;
         background-position: left top;
         border-color: white;
         border-style: solid;
-
+        cursor: pointer;
         display:inline-block;
         padding: 0 0 0 0px;
         display:none;
     }
+
 
     input#mood1[type=radio] + label
     {
