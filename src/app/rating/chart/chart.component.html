@@ -1,0 +1,25 @@
+<p>
+    
+    <!-- <span *ngFor="let localRating of chart">
+        {{ localRating }}
+    </span> -->
+</p>
+<div class="row">
+  <div class="col-sm-12 col-md-12 text-center">
+      <ngx-charts-bar-vertical style="margin: 0 auto;"
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="single"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      (select)="onSelect($event)">
+      </ngx-charts-bar-vertical>
+  </div>
+    
+</div>

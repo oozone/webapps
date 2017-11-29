@@ -1,0 +1,35 @@
+<a [routerLink]="['/rating/list']"><button class="">Back</button></a>
+
+<div class="panel panel-default top-buffer">
+  <div class="panel-heading text-center">
+    <h3>Details Rating</h3>
+  </div>
+  <div class="panel-body">
+      <div class="row">
+          <div class="col-sm-12 text-center">
+              <img src="/assets/images/mood_icons/{{rating.ratingNumber}}.png" width="150px" />
+            </div>
+      </div>
+      
+      <div class="row top-buffer">
+          <div class="col-sm-2 col-sm-offset-3">
+            Date:
+          </div>
+          <div class="col-sm-7">
+            {{rating.createdDate | date:'dd/MM/yyyy @ HH:mm'}}
+          </div>
+      </div>
+      
+      <div class="row top-buffer">
+          <div class="col-sm-2 col-sm-offset-3">
+              Comment:
+            </div>
+          <div class="col-sm-7">
+              {{rating.comment}}
+          </div>
+      </div>
+  </div>
+</div>
+
+
+    

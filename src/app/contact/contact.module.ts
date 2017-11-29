@@ -27,7 +27,7 @@ const routes = [
   ],
   declarations: [
     ContactFormComponent,
-    ControlMessagesComponent
+
   ],
   providers: [
     ContactDataService,

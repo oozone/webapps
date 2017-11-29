@@ -6,6 +6,8 @@
 
 body {
     margin-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    font-family: 'Muli', sans-serif;
+    
 }
 
 .top-buffer { margin-top:20px; }
@@ -43,6 +45,10 @@ body {
     /* background: rgba(255,255,255,0.9); */
     font-family: 'Indie Flower', cursive;
     color: #357bdc;
+}
+
+.muli {
+    font-family: 'Muli', sans-serif;
 }
 
 .headline h2 {

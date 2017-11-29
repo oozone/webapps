@@ -10,14 +10,24 @@ import {RatingResolver} from './rating-resolver.service';
 
 import {RatingComponent} from './rating/rating.component';
 import {RaterComponent} from './rater/rater.component';
-
+import { ChartComponent } from './chart/chart.component';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {ControlMessagesComponent} from '../control-messages/control-messages.component';
+import { SlidePanelComponent } from './slide-panel/slide-panel.component';
+import {RatingDetailComponent} from './rating-detail/rating-detail.component';
+import {
+  BrowserAnimationsModule
+} from '@angular/platform-browser/animations';
 
 const routes = [
+  { path: 'chart', component: ChartComponent},
   { path: 'list', component: RatingsListComponent },
-  { path: 'rater', component: RaterComponent}
+  { path: 'rater', component: RaterComponent},
+  
+
   //{ path: 'add', component: AddRecipeComponent },
-  //{ path: ':id', component: RatingDetailComponent,
-  //  resolve: { recipe: RatingResolver} }
+  { path: ':id', component: RatingDetailComponent,
+   resolve: { rating: RatingResolver} }
 ];
 
 @NgModule({
@@ -25,12 +35,17 @@ const routes = [
     HttpModule,
     CommonModule,
     ReactiveFormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    NgxChartsModule,
   ],
   declarations: [
     RatingsListComponent,
     RatingComponent,
-    RaterComponent
+    RaterComponent,
+    ChartComponent,
+    ControlMessagesComponent,
+    SlidePanelComponent,
+    RatingDetailComponent
   ],
   providers: [
     RatingDataService,

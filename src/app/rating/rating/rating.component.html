@@ -1,9 +1,10 @@
-<div class="row">
-  <div class="col-sm-3">
+<div class="row top-buffer">
+  <div class="col-sm-2 col-sm-offset-3">
     {{rating.createdDate | date:'dd/MM/yyyy @ HH:mm'}}
   </div>
   <div class="col-sm-1">
     <img src="/assets/images/mood_icons/{{rating.ratingNumber}}.png" width="25px" />
   </div>
-  <div class="col-sm-8">{{rating.comment}}</div>
+  <div class="col-sm-4">{{rating.comment}}</div>
+  <div class="col-sm-2"><button class="ui icon button" (click)="viewRating()">View</button></div>
 </div>

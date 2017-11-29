@@ -16,6 +16,8 @@ import { ValidationService } from './validation.service';
 import { AuthenticationService } from './user/authentication.service';
 import { AuthGuardService } from './user/auth-guard.service';
 import { UserModule } from './user/user.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,7 @@ import { UserModule } from './user/user.module';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    
+    BrowserAnimationsModule
   ],
   providers: [ ValidationService],
   bootstrap: [AppComponent]
