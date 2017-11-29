@@ -17,13 +17,14 @@ import { AuthenticationService } from './user/authentication.service';
 import { AuthGuardService } from './user/auth-guard.service';
 import { UserModule } from './user/user.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {ControlMessagesComponent} from './control-messages/control-messages.component';
+import { RatingModule } from './rating/rating.module';
+import { ContactModule } from './contact/contact.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-
   ],
   imports: [
     /*RouterModule.forRoot(
@@ -36,9 +37,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [ ValidationService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

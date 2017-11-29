@@ -12,12 +12,13 @@ import {RatingComponent} from './rating/rating.component';
 import {RaterComponent} from './rater/rater.component';
 import { ChartComponent } from './chart/chart.component';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
-import {ControlMessagesComponent} from '../control-messages/control-messages.component';
+//import {ControlMessagesComponent} from '../control-messages/control-messages.component';
 import { SlidePanelComponent } from './slide-panel/slide-panel.component';
 import {RatingDetailComponent} from './rating-detail/rating-detail.component';
 import {
   BrowserAnimationsModule
 } from '@angular/platform-browser/animations';
+import { AppModule } from '../app.module';
 
 const routes = [
   { path: 'chart', component: ChartComponent},
@@ -43,13 +44,15 @@ const routes = [
     RatingComponent,
     RaterComponent,
     ChartComponent,
-    ControlMessagesComponent,
     SlidePanelComponent,
-    RatingDetailComponent
+    RatingDetailComponent,
+    
   ],
   providers: [
     RatingDataService,
     RatingResolver
   ],
+  exports: []
+
 })
 export class RatingModule { }

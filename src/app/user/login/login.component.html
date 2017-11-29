@@ -1,14 +1,38 @@
-<form [formGroup]='user' (ngSubmit)='onSubmit()' class="ui large form segment">
-  <h3 class="ui header">login</h3>
-  <div class="field">
-    <label for="username">username:</label>
-    <input type="text" id="username" formControlName='username'>
+<div class="panel panel-default">
+  <div class="panel-heading text-center">
+    <h3>Login</h3>    
   </div>
-  <div class="field">
-    <label for="password">password:</label>
-    <input type="password" id="password" formControlName='password'>
+  <div class="panel-body">
+      <form [formGroup]='user' (ngSubmit)='onSubmit()' class="ui large form segment">
+          <div class="row top-buffer">
+            <div class="col-sm-9 col-sm-offset-3">
+                Not a member yet? <b><a class='item' routerLink="/register" >Register!</a></b>
+            </div>
+              
+          </div>
+          <div class="row top-buffer">
+            <div class="col-sm-3">
+                <label for="username">username:</label>
+            </div>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" id="username" formControlName='username'>
+            </div>
+          </div>
+          <div class="row top-buffer">
+              <div class="col-sm-3">
+                  <label for="password">Password:</label>
+              </div>
+              <div class="col-sm-9">
+                  <input class="form-control" type="password" id="password" formControlName='password'>
+              </div>
+          </div>
+          <div class="col-sm-9 col-sm-offset-3 top-buffer">
+              <button type='submit' [disabled]='!user.valid' class="btn-lg btn-default">Log in</button>
+              <div *ngIf='errorMsg' class='' style="color: red;">{{errorMsg}}</div>
+          </div>
+          
+        </form>
+        
   </div>
-  <button type='submit' [disabled]='!user.valid' class="ui positive right floated button">log in</button>
-  <div *ngIf='errorMsg' class='ui red label'>{{errorMsg}}</div>
-</form>
-<a class='item' routerLink="/register" >register</a>
+</div>
+

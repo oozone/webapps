@@ -26,7 +26,7 @@
                         <input type="radio" formControlName="ratingNumber" value="5"  id="mood5"/><label class="img-rounded" id="mood5" for="mood5"></label>
                         <div class="">FANTASTIC</div>
                       </div>
-                      <control-messages [control]="rating.controls.ratingNumber"></control-messages>
+                      
                     </div>
                     <div class="col-sm-12 text-center top-buffer">
                         <button [disabled]="!rating.get('ratingNumber').valid" class="btn-lg btn-default" (click)="isLeftVisible = !isLeftVisible">Verder</button>
@@ -39,7 +39,7 @@
                       <div class="col-sm-8">
                         
                         <textarea rows="5" class="form-control" style="min-width: 100%; resize: none;" id="comment" formControlName='comment'></textarea>
-                        <control-messages [control]="rating.controls.comment"></control-messages>
+                        
                       </div>
                     </div>
                   <div class="row top-buffer">

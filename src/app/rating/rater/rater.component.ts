@@ -19,6 +19,8 @@ export class RaterComponent implements OnInit {
   @ViewChild('selectElem') el:ElementRef;
   @Output() public newContact = new EventEmitter<Rating>();
 
+  public isLeftVisible: boolean = false;
+
   public rating: FormGroup;
   constructor(private fb: FormBuilder, private _ratingDataService: RatingDataService, private _router: Router) {
   }
@@ -42,6 +44,7 @@ export class RaterComponent implements OnInit {
   }
 
   ratingNumberStatus() {
+
     return true;
   }
 
