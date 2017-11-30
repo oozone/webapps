@@ -1,0 +1,53 @@
+import { TestBed, inject } from '@angular/core/testing';
+// import { AuthenticationService } from './authentication.service';
+//import { RatingDataService } from './rating-data.service';
+
+// describe('RatingDataService', () => {
+//   beforeEach(() => {
+//     TestBed.configureTestingModule({
+//       providers: [RatingDataService]
+//     });
+//   });
+
+//   it('should be created', inject([RatingDataService], (service: RatingDataService) => {
+//     expect(service).toBeTruthy();
+//   }));
+// });
+
+
+
+let Request = require('request');
+let data = {"body": {"comment":"", _id: 0}, "status": ""};
+
+
+
+// describe("server", () => {
+// 	let ratingId = {};
+// 	describe("POST /api/ratings", () => {
+		
+// 		// functie met param om async te laten lopen
+// 		beforeAll((done) => {
+// 			Request.post({
+// 				method: 'POST',
+// 				uri: 'http://localhost:3000/api/ratings',
+// 				body: {comment: "test", ratingNumber: 3},
+// 				json: true
+// 			}, 
+// 			(error, response) => {
+// 				data.status = response.statusCode;
+// 				data.body = response.body;
+// 				done();
+// 			});
+//     	});
+	
+// 		it("status", () => {
+// 			expect(data.status).toBe("200");		
+// 		});
+		
+// 		it("body", () => {
+// 			expect(data.body.comment).toBe("test");
+// 			expect(data.body._id).toBeDefined();
+// 			ratingId = data.body._id;
+// 		});
+
+//   })});

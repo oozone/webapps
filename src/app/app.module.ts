@@ -21,6 +21,7 @@ import {ControlMessagesComponent} from './control-messages/control-messages.comp
 import { RatingModule } from './rating/rating.module';
 import { ContactModule } from './contact/contact.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { ContactModule } from './contact/contact.module';
       appRoutes,
       { enableTracing: true }
     ),*/
+    RouterModule,
     BrowserModule,
     HttpModule,
     UserModule,
@@ -41,6 +43,6 @@ import { ContactModule } from './contact/contact.module';
   ],
   providers: [ ValidationService],
   bootstrap: [AppComponent],
-  
+  exports: [FormsModule, ReactiveFormsModule]
 })
 export class AppModule { }

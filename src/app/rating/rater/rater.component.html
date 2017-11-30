@@ -7,30 +7,30 @@
               <div leftPane>
                   <div class="row">
                       <div class="col-sm-2 col-sm-offset-1">
-                        <input type="radio" formControlName="ratingNumber" value="1"  id="mood1"/><label class="img-rounded" for="mood1"></label>
+                        <input type="radio" formControlName="ratingNumber" value="1" (click)="isLeftVisible = !isLeftVisible" id="mood1"/><label class="img-rounded" for="mood1"></label>
                         <div class="">BAD</div>
                       </div>
                       <div class="col-sm-2">
-                        <input type="radio" formControlName="ratingNumber" value="2" id="mood2"/><label class="img-rounded" for="mood2"></label>
+                        <input type="radio" formControlName="ratingNumber" value="2" (click)="isLeftVisible = !isLeftVisible" id="mood2"/><label class="img-rounded" for="mood2"></label>
                         <div class="">NOT GOOD</div>
                       </div>
                       <div class="col-sm-2">
-                        <input type="radio" formControlName="ratingNumber" value="3"  id="mood3"/><label class="img-rounded" for="mood3"></label>
+                        <input type="radio" formControlName="ratingNumber" value="3" (click)="isLeftVisible = !isLeftVisible" id="mood3"/><label class="img-rounded" for="mood3"></label>
                         <div class="">OK</div>
                       </div>
                       <div class="col-sm-2">
-                        <input type="radio" formControlName="ratingNumber" value="4"  id="mood4"/><label class="img-rounded" for="mood4"></label>
+                        <input type="radio" formControlName="ratingNumber" value="4" (click)="isLeftVisible = !isLeftVisible" id="mood4"/><label class="img-rounded" for="mood4"></label>
                         <div class="">GREAT</div>
                       </div>
                       <div class="col-sm-2">
-                        <input type="radio" formControlName="ratingNumber" value="5"  id="mood5"/><label class="img-rounded" id="mood5" for="mood5"></label>
+                        <input type="radio" formControlName="ratingNumber" value="5" (click)="isLeftVisible = !isLeftVisible" id="mood5"/><label class="img-rounded" id="mood5" for="mood5"></label>
                         <div class="">FANTASTIC</div>
                       </div>
                       
                     </div>
-                    <div class="col-sm-12 text-center top-buffer">
+                    <!-- <div class="col-sm-12 text-center top-buffer">
                         <button [disabled]="!rating.get('ratingNumber').valid" class="btn-lg btn-default" (click)="isLeftVisible = !isLeftVisible">Verder</button>
-                    </div>
+                    </div> -->
                    
               </div>
               <div rightPane>

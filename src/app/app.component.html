@@ -27,15 +27,15 @@
                 <li>
                     <a href="/contact">Contact</a>
                 </li>
-                <li class="highlightli">
-                        <a *ngIf='(currentUser | async) else loginlink' class="item" routerLinkActive='active' routerLink="/logout">{{currentUser|async}}</a>
-                        <ng-template #loginlink>
-                                <a class="item" routerLinkActive='active' routerLink="/login">Login</a>
-                              </ng-template>
-                </li>
+                
                 
             </ul>
-            
+            <div class="highlightli pull-right">
+                    <a *ngIf='(currentUser | async) else loginlink' class="item" routerLinkActive='active' routerLink="/logout">{{currentUser|async}}</a>
+                    <ng-template #loginlink>
+                            <a class="item" routerLinkActive='active' routerLink="/login">Login</a>
+                          </ng-template>
+                        </div>
         </div>
         <!-- /.navbar-collapse -->
     </div>
