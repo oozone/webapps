@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ContactDataService {
 
-  private _appUrl = 'http://localhost:4200/api/';
+  private _appUrl = '/api/';
   private _contacts;
   
   constructor(private http: Http, 
