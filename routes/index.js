@@ -9,10 +9,6 @@ let Contact = mongoose.model('Contact');
 
 let auth = jwt({secret: process.env.RECIPE_BACKEND_SECRET, userProperty: 'payload'});
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'MoodMeter' });
-});
 
 /* RATINGS */
 router.get('/api/ratings', function(req, res, next){
