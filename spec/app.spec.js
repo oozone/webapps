@@ -65,5 +65,59 @@ describe("server",()=>{
         });
     });
 
+    describe("POST /api/users/checkusername", () => {
+        let data = {};
+        beforeAll((done)=> {
+            Request({
+                method: 'POST',
+                uri: 'http://localhost:3000/api/users/checkusername',
+                json: true,
+                body:{"username": "thisusernamedoesnotexist"}
+            },(error, response, body) => {
+                data.status = response.statusCode;
+                data.body = body;
+                done();
+            }).auth(null,null,true,process.env.VALID_TOKEN);
+        });
+
+        it("status 200", () => {
+            expect(data.status).toBe(200);
+        });
+
+        it("body", () => {
+            expect(data.body.username).toBe("ok");
+		});
+    });
+
+    describe("POST /api/contacts", () => {
+        let data = {};
+        beforeAll((done)=> {
+            Request({
+                method: 'POST',
+                uri: 'http://localhost:3000/api/contacts',
+                json: true,
+                body: {
+                    "name": "test",
+                    "email": "email@email.com",
+                    "comment": "commentje",
+                    "createdDate": new Date()
+                }
+            },(error, response, body) => {
+                data.status = response.statusCode;
+                data.body = body;
+                done();
+            }).auth(null,null,true,process.env.VALID_TOKEN);
+        });
+
+        it("status 200", () => {
+            expect(data.status).toBe(200);
+        });
+
+        it("body", () => {
+            expect(data.body.name).toBe("test");
+            expect(data.body.email).toBe("email@email.com");
+            expect(data.body.comment).toBe("commentje");
+		});
+    });
 
 });
