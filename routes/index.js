@@ -56,6 +56,13 @@ router.get('/api/rating/:rating', function(req, res) {
   res.json(req.rating);
 });
 
+router.delete('/api/rating/:rating', function(req, res, next) {
+  req.rating.remove(function(err) {
+    if (err) { return next(err); }   
+    res.json(req.rating);
+   });
+})
+
 /* CONTACT */
 router.get('/api/contacts', function(req, res, next){
   Contact.find(function(err, contacts){
