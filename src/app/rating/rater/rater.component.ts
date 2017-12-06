@@ -59,11 +59,5 @@ export class RaterComponent implements OnInit {
     }
     // this.newRecipe.emit(recipe);
   }
-
-  // rateMood(rating: Number) : boolean {
-  //   console.log(rating);
-  //   return false;
-  // }
-
-
+  
 }

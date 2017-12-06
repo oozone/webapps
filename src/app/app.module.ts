@@ -28,10 +28,6 @@ import { ContactModule } from './contact/contact.module';
     PageNotFoundComponent,
   ],
   imports: [
-    /*RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true }
-    ),*/
     RouterModule,
     BrowserModule,
     HttpModule,

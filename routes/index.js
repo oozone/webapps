@@ -11,14 +11,14 @@ let auth = jwt({secret: process.env.RECIPE_BACKEND_SECRET, userProperty: 'payloa
 
 
 /* RATINGS */
-router.get('/api/ratings', function(req, res, next){
+router.get('/api/ratings', auth, function(req, res, next){
   Rating.find(function(err, ratings){
     if (err) { return next(err); }
     res.json(ratings);
   });
 });
 
-router.get('/api/ratings/countedperrating', function(req, res, next){
+router.get('/api/ratings/countedperrating', auth, function(req, res, next){
   Rating.aggregate(
       { $group: { _id: "$ratingNumber", value: {$sum: 1}}},
       { $sort : { _id : 1 }},
@@ -48,15 +48,11 @@ router.param('rating', function(req, res, next, id) {
   });
 });  
 
-router.get('/api/rating/:rating', function(req, res) {
-  // Rating.findById(req.params.id, function(err, rating){
-  //     if(err) { return next(err); }
-  //     res.json(rating);
-  // })
+router.get('/api/rating/:rating', auth, function(req, res) {
   res.json(req.rating);
 });
 
-router.delete('/api/rating/:rating', function(req, res, next) {
+router.delete('/api/rating/:rating', auth, function(req, res, next) {
   req.rating.remove(function(err) {
     if (err) { return next(err); }   
     res.json(req.rating);

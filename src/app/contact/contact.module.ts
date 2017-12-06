@@ -14,10 +14,6 @@ import { AppModule } from '../app.module';
 
 const routes = [
   { path: '', component: ContactFormComponent },
-  //{ path: 'rater', component: RaterComponent}
-  //{ path: 'add', component: AddRecipeComponent },
-  //{ path: ':id', component: RatingDetailComponent,
-  //  resolve: { recipe: RatingResolver} }
 ];
 
 @NgModule({
@@ -32,7 +28,6 @@ const routes = [
   declarations: [
     ControlMessagesComponent,
     ContactFormComponent,
-    //ControlMessagesComponent
   ],
   providers: [
     ContactDataService,

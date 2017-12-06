@@ -32,7 +32,9 @@ export class RatingDataService {
   }
 
   get ratingPerRatingNumber(): Observable<Array<Number>> {
-    return this.http.get(`${this._appUrl}ratings/countedperrating`,)
+    return this.http.get(`${this._appUrl}ratings/countedperrating`,
+    { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) }
+    )
 	.map(response => response.json().map(item => item) );
   }
 

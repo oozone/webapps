@@ -1,6 +1,9 @@
 <div class="panel panel-default">
     <div class="panel-body form-horizontal">
-
+      <div ng-if="message != ''" style="text-align: center; margin: 0 auto;">
+          <h3 style="color: green;">{{ message }}</h3>
+      </div>
+      
       <form [formGroup]='contact' (ngSubmit)='onSubmit()' class="">
           <h2 class="text-center" style="margin-bottom: 20px">Contact us!</h2>
           <div class="form-group">
@@ -21,7 +24,7 @@
           <div class="form-group">
             <label for="comment_id" class="col-sm-3 control-label">Message:</label>
             <div class="col-sm-9">
-              <textarea style="resize: none;" rows="10" class="form-control" id="comment_id" formControlName='comment'></textarea>
+              <textarea [(ngModel)]="contact.comment" style="resize: none;" rows="10" class="form-control" id="comment_id" formControlName='comment'></textarea>
               <control-messages [control]="contact.controls.comment"></control-messages>
             </div>
           </div>

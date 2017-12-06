@@ -6,20 +6,7 @@ import { Rating } from '../rating.model';
 import { Countrating } from '../countrating.model';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 
-export var single = [
-  // {
-  //   "name": "Germany",
-  //   "value": 8940000
-  // },
-  // {
-  //   "name": "USA",
-  //   "value": 5000000
-  // },
-  // {
-  //   "name": "France",
-  //   "value": 7200000
-  // }
-];
+
 
 @Component({
   selector: 'app-chart',
@@ -61,21 +48,9 @@ export class ChartComponent implements OnInit {
     this._ratingDataService.ratingPerRatingNumber.subscribe(
       (items) => {
         self.single = self.convertData(items);
-        console.log(self.single);
         Object.assign(self, self.single);  
-        
       }
-        //console.log(items)
-        //this._chart = items
-        //Object.assign(self, self.convertData(items))
-        //self.convertData(items)
-        
     );
-    //console.log({this.single});
-    //Object.assign(self, {test});
-     
-    //console.log(this._chart); 
-    
   }
 
   get chart() {

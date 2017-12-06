@@ -19,15 +19,10 @@ export class RatingDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    // const id = this.route.snapshot.paramMap.get('id');
-    // this.recipeDataService.getRecipe(id).subscribe(item => this._recipe = item);
 
     this.route.data.subscribe(item => 
       this._rating = item['rating']
-      //console.log(item)
     );
-    // this.route.paramMap.subscribe(pa =>
-    //   this.recipeDataService.getRecipe(pa.get('id')).subscribe(item => this._recipe = item)
-    // );
+
   }
 }

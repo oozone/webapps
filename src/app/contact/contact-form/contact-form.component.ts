@@ -20,6 +20,8 @@ export class ContactFormComponent implements OnInit {
   @Output() public newContact = new EventEmitter<Contact>();
   public contact: FormGroup;
 
+  public message: String = '';
+
   constructor(private fb: FormBuilder, private _contactDataService: ContactDataService, private _router: Router) { }
 
   ngOnInit() {
@@ -34,6 +36,12 @@ export class ContactFormComponent implements OnInit {
     const contact = new Contact(this.contact.value.name, this.contact.value.email, this.contact.value.comment, new Date());
     if (this.contact.dirty && this.contact.valid) {
       this._contactDataService.addNewContact(contact).subscribe(item => {
+        this.message = 'Your message was received!';
+        this.contact.reset({
+          name: '',
+          email: '',
+          comment: ''
+        });
         this._router.navigate(['contact']);
       }
     );
